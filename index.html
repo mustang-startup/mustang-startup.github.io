@@ -35,6 +35,7 @@
           <li><a href="#sightseeing">Attractions</a></li>
           <li><a href="#transport">Getting Around</a></li>
           <li><a href="#tips">Tips</a></li>
+          <li><a href="#hotels">Hotels</a></li>
         </ul>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -60,6 +61,16 @@
           <span class="hero-title-year">2026</span>
         </h1>
         <p class="hero-subtitle">Your ultimate insider guide to experiencing the world's biggest sporting event in one of the world's most vibrant cities.</p>
+        <div class="hero-countdown" id="heroCountdown" aria-live="polite">
+          <div class="cd-item"><span class="cd-num" id="cdDays">---</span><span class="cd-label">Days</span></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-item"><span class="cd-num" id="cdHours">--</span><span class="cd-label">Hours</span></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-item"><span class="cd-num" id="cdMins">--</span><span class="cd-label">Mins</span></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-item"><span class="cd-num" id="cdSecs">--</span><span class="cd-label">Secs</span></div>
+        </div>
+        <p class="cd-caption">Until first Toronto match · Jun 12, 2026</p>
         <div class="hero-stats">
           <div class="hero-stat">
             <span class="hero-stat-num">10+</span>
@@ -767,6 +778,42 @@
       </div>
     </section>
 
+    <!-- HOTELS -->
+    <section class="section section-alt" id="hotels">
+      <div class="container">
+        <div class="section-label">Accommodation</div>
+        <h2 class="section-title">Book Your Stay</h2>
+        <p class="section-desc">Book as early as possible — Toronto hotels during the World Cup sell out months in advance. All links are pre-filled for the full tournament window.</p>
+        <div class="hotel-grid">
+          <a href="https://www.booking.com/searchresults.html?ss=Toronto%2C+Ontario&checkin=2026-06-10&checkout=2026-07-20&group_adults=2&no_rooms=1" class="hotel-card" target="_blank" rel="noopener">
+            <div class="hotel-card-logo">🏨</div>
+            <div class="hotel-card-name">Booking.com</div>
+            <div class="hotel-card-desc">Largest selection · Free cancellation on most rooms</div>
+            <span class="hotel-card-cta">Search Hotels →</span>
+          </a>
+          <a href="https://www.hotels.com/search.do?q-destination=Toronto%2C+Ontario%2C+Canada&q-check-in=2026-06-10&q-check-out=2026-07-20&q-rooms=1&q-room-0-adults=2" class="hotel-card" target="_blank" rel="noopener">
+            <div class="hotel-card-logo">🏩</div>
+            <div class="hotel-card-name">Hotels.com</div>
+            <div class="hotel-card-desc">Earn free nights with the Rewards program</div>
+            <span class="hotel-card-cta">Search Hotels →</span>
+          </a>
+          <a href="https://www.expedia.ca/Hotel-Search?destination=Toronto%2C+Ontario%2C+Canada&startDate=06%2F10%2F2026&endDate=07%2F20%2F2026" class="hotel-card" target="_blank" rel="noopener">
+            <div class="hotel-card-logo">✈️</div>
+            <div class="hotel-card-name">Expedia</div>
+            <div class="hotel-card-desc">Bundle hotel + flights for better value</div>
+            <span class="hotel-card-cta">Search Packages →</span>
+          </a>
+          <a href="https://www.airbnb.com/s/Toronto--Ontario--Canada/homes?checkin=2026-06-10&checkout=2026-07-20&adults=2" class="hotel-card" target="_blank" rel="noopener">
+            <div class="hotel-card-logo">🏠</div>
+            <div class="hotel-card-name">Airbnb</div>
+            <div class="hotel-card-desc">Apartments & homes · Perfect for groups</div>
+            <span class="hotel-card-cta">Find Places →</span>
+          </a>
+        </div>
+        <p class="hotel-note">⚠️ Consider booking fully cancellable rates until match schedules are confirmed at <a href="https://www.fifa.com" target="_blank" rel="noopener" class="link">fifa.com</a>. Prices spike sharply once fixtures are announced.</p>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container">
@@ -998,8 +1045,102 @@
       row.className = 'fan-ride-row';
       row.innerHTML =
         `<a href="${buildUberUrl(null,null,v.lat,v.lng,name)}" target="_blank" rel="noopener" class="fan-ride-btn fan-uber">Uber ↗</a>` +
-        `<a href="${buildLyftUrl(null,null,v.lat,v.lng,name)}" target="_blank" rel="noopener" class="fan-ride-btn fan-lyft">Lyft ↗</a>`;
+        `<a href="${buildLyftUrl(null,null,v.lat,v.lng,name)}" target="_blank" rel="noopener" class="fan-ride-btn fan-lyft">Lyft ↗</a>` +
+        `<a href="https://www.google.com/maps/dir/?api=1&destination=${v.lat},${v.lng}&travelmode=transit" target="_blank" rel="noopener" class="fan-ride-btn fan-maps">Maps ↗</a>`;
       card.querySelector('.fan-card-bottom').appendChild(row);
+    });
+
+    // ── Countdown Timer ───────────────────────────────────────────
+    (function () {
+      const target = new Date('2026-06-12T23:00:00Z');
+      const els = ['cdDays','cdHours','cdMins','cdSecs'].map(id => document.getElementById(id));
+      function tick() {
+        const diff = target - Date.now();
+        if (diff <= 0) { document.getElementById('heroCountdown').innerHTML = '<span class="cd-live">⚽ It\'s match time in Toronto!</span>'; return; }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        [String(d).padStart(3,'0'), String(h).padStart(2,'0'), String(m).padStart(2,'0'), String(s).padStart(2,'0')]
+          .forEach((v, i) => { if (els[i]) els[i].textContent = v; });
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // ── Add to Calendar (ICS download) ───────────────────────────
+    const matchCalData = [
+      { start:'20260612T230000Z', end:'20260613T010000Z', label:'Group Stage Match 1' },
+      { start:'20260615T230000Z', end:'20260616T010000Z', label:'Group Stage Match 2' },
+      { start:'20260619T230000Z', end:'20260620T010000Z', label:'Group Stage Match 3' },
+      { start:'20260622T230000Z', end:'20260623T010000Z', label:'Group Stage Match 4' },
+      { start:'20260625T230000Z', end:'20260626T010000Z', label:'Group Stage Match 5' },
+      { start:'20260702T230000Z', end:'20260703T010000Z', label:'Round of 32' },
+    ];
+    function downloadICS(m, num) {
+      const lines = [
+        'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Toronto 2026 Guide//EN','CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT',
+        `DTSTART:${m.start}`, `DTEND:${m.end}`,
+        `SUMMARY:⚽ FIFA World Cup 2026 · ${m.label} · Toronto`,
+        'LOCATION:BMO Field\\, 170 Princes Blvd\\, Toronto\\, ON',
+        'DESCRIPTION:FIFA World Cup 2026 match at BMO Field Toronto. Kickoff time is TBC — verify at fifa.com.',
+        'URL:https://www.fifa.com',
+        `UID:toronto2026-match-${num}@toronto2026.guide`,
+        'END:VEVENT','END:VCALENDAR',
+      ].join('\r\n');
+      const a = Object.assign(document.createElement('a'), {
+        href: URL.createObjectURL(new Blob([lines], { type: 'text/calendar;charset=utf-8' })),
+        download: `toronto-2026-match-${num}.ics`,
+      });
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    }
+    document.querySelectorAll('.match-card').forEach((card, i) => {
+      if (!matchCalData[i]) return;
+      const btn = document.createElement('button');
+      btn.className = 'match-cal-btn';
+      btn.textContent = '📅 Add to Calendar';
+      btn.addEventListener('click', () => downloadICS(matchCalData[i], i + 1));
+      card.appendChild(btn);
+    });
+
+    // ── Attraction Directions ─────────────────────────────────────
+    const attractionCoords = {
+      'CN Tower':               { lat: 43.6426, lng: -79.3871 },
+      'Toronto Islands':        { lat: 43.6532, lng: -79.3832 },
+      'Royal Ontario Museum':   { lat: 43.6677, lng: -79.3948 },
+      "Ripley's Aquarium":      { lat: 43.6423, lng: -79.3871 },
+      'Niagara Falls Day Trip': { lat: 43.0896, lng: -79.0849 },
+      'Art Gallery of Ontario': { lat: 43.6536, lng: -79.3925 },
+    };
+    document.querySelectorAll('.attraction-item').forEach(item => {
+      const name = item.querySelector('h3').textContent.trim();
+      const c = attractionCoords[name];
+      if (!c) return;
+      const a = Object.assign(document.createElement('a'), {
+        href: `https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}&travelmode=transit`,
+        target: '_blank', rel: 'noopener', className: 'attraction-dir-btn',
+        textContent: 'Get Directions ↗',
+      });
+      item.querySelector('.attraction-content').appendChild(a);
+    });
+
+    // ── OpenTable Dining Reservations ─────────────────────────────
+    const openTableLinks = {
+      'Chinatown & Spadina':   'https://www.opentable.com/s/?term=dim+sum+chinatown+toronto&covers=2',
+      'College Street Strip':  'https://www.opentable.com/s/?term=little+italy+college+street+toronto&covers=2',
+      'Yorkville Fine Dining': 'https://www.opentable.com/s/?term=yorkville+fine+dining+toronto&covers=2',
+      'Distillery Brewpubs':   'https://www.opentable.com/s/?term=distillery+district+toronto&covers=2',
+    };
+    document.querySelectorAll('.dining-card').forEach(card => {
+      const name = card.querySelector('h3').textContent.trim();
+      const url = openTableLinks[name];
+      if (!url) return;
+      const a = Object.assign(document.createElement('a'), {
+        href: url, target: '_blank', rel: 'noopener',
+        className: 'dining-reserve-btn', textContent: '🍽️ Reserve on OpenTable',
+      });
+      card.appendChild(a);
     });
 
     // Fan Hub filter
