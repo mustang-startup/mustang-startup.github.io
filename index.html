@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -852,6 +853,8 @@
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <script>
+    twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+
     const scrollProgress = document.getElementById('scrollProgress');
     const header = document.getElementById('siteHeader');
     const backToTop = document.getElementById('backToTop');
