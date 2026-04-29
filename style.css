@@ -590,3 +590,40 @@ strong { font-weight: 600; }
   .fan-grid { grid-template-columns: 1fr; }
   .fan-filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.5rem; -webkit-overflow-scrolling: touch; }
 }
+
+/* ===== Ride Integration ===== */
+.ride-widget {
+  margin-top: 2.5rem;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.6rem 2rem;
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.ride-widget-header { flex: 1; min-width: 180px; }
+.ride-widget-label { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+.ride-widget-sub { font-size: 0.8rem; color: var(--gray); }
+.ride-widget-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.ride-btn {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.6rem 1.2rem; border-radius: 8px;
+  font-size: 0.88rem; font-weight: 700; cursor: pointer; border: none;
+  transition: opacity 0.2s, transform 0.15s; white-space: nowrap; font-family: inherit;
+}
+.ride-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.ride-uber    { background: #000; color: #fff; }
+.ride-lyft    { background: #ea0d7c; color: #fff; }
+.ride-estimate{ background: var(--gold); color: #000; }
+.ride-geo-note { width: 100%; font-size: 0.76rem; color: var(--gray); margin-top: 0.25rem; }
+
+.fan-ride-row { display: flex; gap: 0.4rem; margin-top: 0.55rem; }
+.fan-ride-btn {
+  display: inline-flex; align-items: center;
+  padding: 0.22rem 0.65rem; border-radius: 6px;
+  font-size: 0.7rem; font-weight: 700; transition: opacity 0.2s; white-space: nowrap;
+}
+.fan-ride-btn:hover { opacity: 0.8; }
+.fan-uber { background: #000; color: #fff; }
+.fan-lyft { background: #ea0d7c; color: #fff; }
+
+@media (max-width: 768px) {
+  .ride-widget { flex-direction: column; gap: 1.1rem; align-items: flex-start; padding: 1.25rem; }
+}

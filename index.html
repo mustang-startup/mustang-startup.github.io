@@ -150,6 +150,19 @@
             </div>
           </div>
         </div>
+
+        <div class="ride-widget">
+          <div class="ride-widget-header">
+            <div class="ride-widget-label">Get a Ride to BMO Field</div>
+            <div class="ride-widget-sub">Tap a button — we'll use your current location as pickup</div>
+          </div>
+          <div class="ride-widget-btns">
+            <button class="ride-btn ride-uber" id="venueUber">🚗 Open Uber</button>
+            <button class="ride-btn ride-lyft" id="venueLyft">🟣 Open Lyft</button>
+            <button class="ride-btn ride-estimate" id="venueEstimate">💰 Fare Estimate</button>
+          </div>
+          <p class="ride-geo-note" id="rideGeoNote">📍 Location is requested when you tap — never stored or shared</p>
+        </div>
       </div>
     </section>
 
@@ -899,6 +912,94 @@
     document.querySelectorAll('.dining-card, .transport-card, .tip-card, .neighborhood-card, .match-card, .ent-card, .attraction-item, .venue-detail').forEach(el => {
       el.classList.add('reveal');
       revealObserver.observe(el);
+    });
+
+    // Ride integration
+    const BMO = { lat: 43.6317, lng: -79.4162, name: 'BMO Field' };
+
+    function buildUberUrl(pLat, pLng, dLat, dLng, name) {
+      const dn = encodeURIComponent(name);
+      if (pLat && pLng)
+        return `https://m.uber.com/ul/?action=setPickup&pickup[latitude]=${pLat}&pickup[longitude]=${pLng}&pickup[nickname]=My+Location&dropoff[latitude]=${dLat}&dropoff[longitude]=${dLng}&dropoff[nickname]=${dn}`;
+      return `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=${dLat}&dropoff[longitude]=${dLng}&dropoff[nickname]=${dn}`;
+    }
+
+    function buildLyftUrl(pLat, pLng, dLat, dLng, name) {
+      const dn = encodeURIComponent(name);
+      if (pLat && pLng)
+        return `https://lyft.com/ride?id=lyft&pickup[latitude]=${pLat}&pickup[longitude]=${pLng}&destination[latitude]=${dLat}&destination[longitude]=${dLng}&destination[name]=${dn}`;
+      return `https://lyft.com/ride?id=lyft&destination[latitude]=${dLat}&destination[longitude]=${dLng}&destination[name]=${dn}`;
+    }
+
+    function geoRide(buildFn, dLat, dLng, dName) {
+      const note = document.getElementById('rideGeoNote');
+      if (!navigator.geolocation) {
+        window.open(buildFn(null, null, dLat, dLng, dName), '_blank');
+        return;
+      }
+      if (note) note.textContent = '📍 Requesting your location…';
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          if (note) note.textContent = '✅ Location found — opening with pickup set';
+          window.open(buildFn(pos.coords.latitude, pos.coords.longitude, dLat, dLng, dName), '_blank');
+        },
+        () => {
+          if (note) note.textContent = '⚠️ Location denied — opening without pickup preset';
+          window.open(buildFn(null, null, dLat, dLng, dName), '_blank');
+        },
+        { timeout: 8000 }
+      );
+    }
+
+    document.getElementById('venueUber').addEventListener('click', () => geoRide(buildUberUrl, BMO.lat, BMO.lng, BMO.name));
+    document.getElementById('venueLyft').addEventListener('click', () => geoRide(buildLyftUrl, BMO.lat, BMO.lng, BMO.name));
+    document.getElementById('venueEstimate').addEventListener('click', () => {
+      const note = document.getElementById('rideGeoNote');
+      if (!navigator.geolocation) {
+        window.open(`https://www.uber.com/ca/en/price-estimate/`, '_blank');
+        return;
+      }
+      if (note) note.textContent = '📍 Requesting your location for fare estimate…';
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          if (note) note.textContent = '✅ Opening Uber fare estimate with your route';
+          window.open(buildUberUrl(pos.coords.latitude, pos.coords.longitude, BMO.lat, BMO.lng, BMO.name), '_blank');
+        },
+        () => window.open('https://www.uber.com/ca/en/price-estimate/', '_blank'),
+        { timeout: 8000 }
+      );
+    });
+
+    // Fan Hub ride buttons — injected by JS, keyed on venue name
+    const fanVenues = {
+      'Real Sports Bar & Grill':       { lat: 43.6417, lng: -79.3884 },
+      "Fionn MacCool's":               { lat: 43.6489, lng: -79.3762 },
+      'Nathan Phillips Fan Zone':      { lat: 43.6532, lng: -79.3832 },
+      'Café Diplomatico':              { lat: 43.6566, lng: -79.4230 },
+      'College Street Strip':          { lat: 43.6558, lng: -79.4170 },
+      'Chiado Restaurant':             { lat: 43.6491, lng: -79.3898 },
+      'Little Portugal (Dundas West)': { lat: 43.6486, lng: -79.4454 },
+      'Myth Restaurant & Bar':         { lat: 43.6783, lng: -79.3515 },
+      'Greektown — The Danforth':      { lat: 43.6780, lng: -79.3500 },
+      'Koreatown (Bloor West)':        { lat: 43.6645, lng: -79.4236 },
+      'Copacabana Restaurant':         { lat: 43.6449, lng: -79.4010 },
+      'El Catrin Destileria':          { lat: 43.6503, lng: -79.3591 },
+      'Kensington Market':             { lat: 43.6540, lng: -79.4016 },
+      'The Duke of Westminster':       { lat: 43.6467, lng: -79.4062 },
+      'The Artful Dodger':             { lat: 43.6688, lng: -79.3813 },
+      'Alliance Française de Toronto': { lat: 43.6690, lng: -79.3858 },
+    };
+
+    document.querySelectorAll('.fan-card').forEach(card => {
+      const name = card.querySelector('h3').textContent.trim();
+      const v = fanVenues[name];
+      if (!v) return;
+      const row = document.createElement('div');
+      row.className = 'fan-ride-row';
+      row.innerHTML =
+        `<a href="${buildUberUrl(null,null,v.lat,v.lng,name)}" target="_blank" rel="noopener" class="fan-ride-btn fan-uber">Uber ↗</a>` +
+        `<a href="${buildLyftUrl(null,null,v.lat,v.lng,name)}" target="_blank" rel="noopener" class="fan-ride-btn fan-lyft">Lyft ↗</a>`;
+      card.querySelector('.fan-card-bottom').appendChild(row);
     });
 
     // Fan Hub filter
