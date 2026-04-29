@@ -1,89 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIFA World Cup Toronto Guide</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your complete guide to FIFA World Cup 2026 in Toronto — venue, match schedule, dining, nightlife, attractions, transport, and visitor tips.">
+  <meta property="og:title" content="Toronto 2026 · FIFA World Cup Visitor Guide">
+  <meta property="og:description" content="Everything you need for the FIFA World Cup 2026 in Toronto — matches, food, nightlife, attractions, and local tips.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <title>Toronto 2026 · FIFA World Cup Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>FIFA World Cup Toronto Guide</h1>
-        <nav>
-            <ul>
-                <li><a href="#welcome">Welcome</a></li>
-                <li><a href="#dining">Dining</a></li>
-                <li><a href="#entertainment">Entertainment</a></li>
-                <li><a href="#sightseeing">Sightseeing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="welcome">
-            <h2>Welcome to Toronto!</h2>
-            <p>
-                Visiting for the FIFA World Cup? Discover the best of Toronto—dining, entertainment, and must-see attractions—all in one place. Enjoy your stay and make the most of your World Cup experience!
-            </p>
-        </section>
-        <section id="dining">
-            <h2>Top Dining Spots</h2>
-            <div class="card-list">
-                <div class="card">
-                    <h3>St. Lawrence Market</h3>
-                    <p>Iconic food market with local and international flavors. Try the famous peameal bacon sandwich!</p>
+
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="Toronto 2026 home">
+        <span class="logo-icon">⚽</span>
+        <span class="logo-text">Toronto <strong>2026</strong></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#dining">Dining</a></li>
+          <li><a href="#entertainment">Nightlife</a></li>
+          <li><a href="#sightseeing">Attractions</a></li>
+          <li><a href="#transport">Getting Around</a></li>
+          <li><a href="#tips">Tips</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">FIFA World Cup 2026</div>
+        <h1 class="hero-title">
+          <span class="hero-title-city">Toronto</span>
+          <span class="hero-title-year">2026</span>
+        </h1>
+        <p class="hero-subtitle">Your ultimate insider guide to experiencing the world's biggest sporting event in one of the world's most vibrant cities.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">10+</span>
+            <span class="hero-stat-label">Matches</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">45K</span>
+            <span class="hero-stat-label">Capacity</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">2.9M</span>
+            <span class="hero-stat-label">Residents</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">200+</span>
+            <span class="hero-stat-label">Languages</span>
+          </div>
+        </div>
+        <div class="hero-ctas">
+          <a href="#venue" class="btn btn-primary">Explore the Venue</a>
+          <a href="#dining" class="btn btn-ghost">Discover the City</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section class="section" id="venue">
+      <div class="container">
+        <div class="section-label">The Venue</div>
+        <h2 class="section-title">BMO Field</h2>
+        <div class="venue-grid">
+          <div class="venue-visual" aria-hidden="true">
+            <div class="stadium-shape">
+              <div class="stadium-inner">
+                <div class="field">
+                  <div class="field-line center-circle"></div>
+                  <div class="field-line halfway"></div>
+                  <div class="field-line penalty-box left"></div>
+                  <div class="field-line penalty-box right"></div>
                 </div>
-                <div class="card">
-                    <h3>Kensington Market</h3>
-                    <p>Eclectic neighborhood with global eats, vegan options, and vibrant street art.</p>
-                </div>
-                <div class="card">
-                    <h3>Chinatown</h3>
-                    <p>Authentic Asian cuisine, from dim sum to pho, in a bustling district near downtown.</p>
-                </div>
+              </div>
+              <div class="stadium-ring r1"></div>
+              <div class="stadium-ring r2"></div>
             </div>
-        </section>
-        <section id="entertainment">
-            <h2>Entertainment & Nightlife</h2>
-            <div class="card-list">
-                <div class="card">
-                    <h3>Distillery District</h3>
-                    <p>Historic area with bars, galleries, live music, and unique shops.</p>
-                </div>
-                <div class="card">
-                    <h3>Queen Street West</h3>
-                    <p>Trendy strip for nightlife, indie music venues, and boutique shopping.</p>
-                </div>
-                <div class="card">
-                    <h3>Harbourfront Centre</h3>
-                    <p>Waterfront events, outdoor concerts, and beautiful lake views.</p>
-                </div>
+          </div>
+          <div class="venue-details">
+            <div class="venue-detail">
+              <span class="venue-detail-icon">📍</span>
+              <div>
+                <strong>Location</strong>
+                <p>170 Princes' Blvd, Toronto — Exhibition Place, waterfront area</p>
+              </div>
             </div>
-        </section>
-        <section id="sightseeing">
-            <h2>Must-See Attractions</h2>
-            <div class="card-list">
-                <div class="card">
-                    <h3>CN Tower</h3>
-                    <p>Toronto’s iconic skyline landmark. Go up for breathtaking city views!</p>
-                </div>
-                <div class="card">
-                    <h3>Royal Ontario Museum</h3>
-                    <p>World-class exhibits on art, culture, and natural history.</p>
-                </div>
-                <div class="card">
-                    <h3>Toronto Islands</h3>
-                    <p>Take a ferry for beaches, biking, and a relaxing escape from downtown.</p>
-                </div>
+            <div class="venue-detail">
+              <span class="venue-detail-icon">🏟️</span>
+              <div>
+                <strong>Capacity</strong>
+                <p>~45,000 (expanded for World Cup 2026)</p>
+              </div>
             </div>
-        </section>
-        <section id="contact">
-            <h2>Contact & Help</h2>
-            <p>Need assistance or have a suggestion? Email us at <a href="mailto:info@fifatorontoguide.com">info@fifatorontoguide.com</a>.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 FIFA World Cup Toronto Guide. All rights reserved.</p>
-    </footer>
+            <div class="venue-detail">
+              <span class="venue-detail-icon">🚇</span>
+              <div>
+                <strong>Getting There</strong>
+                <p>Exhibition GO Station (direct) · TTC Streetcar 509/511 · 20 min walk from Union Station. Do not drive — parking is extremely limited on match days.</p>
+              </div>
+            </div>
+            <div class="venue-detail">
+              <span class="venue-detail-icon">🎟️</span>
+              <div>
+                <strong>Tickets</strong>
+                <p>All ticketing via <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener" class="link">FIFA.com/tickets</a> only. Beware resellers charging 10× face value.</p>
+              </div>
+            </div>
+            <div class="venue-detail">
+              <span class="venue-detail-icon">⏰</span>
+              <div>
+                <strong>Arrive Early</strong>
+                <p>Gates open 2 hours before kickoff. Security queues peak 90 minutes before — plan accordingly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section section-alt" id="schedule">
+      <div class="container">
+        <div class="section-label">Match Schedule</div>
+        <h2 class="section-title">Toronto's Fixtures</h2>
+        <p class="section-desc">Toronto hosts Group Stage and knockout round matches at BMO Field. Verify all fixtures at <a href="https://www.fifa.com" target="_blank" rel="noopener" class="link">FIFA.com</a>.</p>
+        <div class="schedule-grid">
+          <div class="match-card">
+            <div class="match-phase">Group Stage · Match 1</div>
+            <div class="match-date">Jun 12, 2026</div>
+            <div class="match-teams">
+              <span class="team">Group A</span>
+              <span class="vs">vs</span>
+              <span class="team">Group A</span>
+            </div>
+            <div class="match-time">🕒 TBC · BMO Field</div>
+          </div>
+          <div class="match-card">
+            <div class="match-phase">Group Stage · Match 2</div>
+            <div class="match-date">Jun 15, 2026</div>
+            <div class="match-teams">
+              <span class="team">Group B</span>
+              <span class="vs">vs</span>
+              <span class="team">Group B</span>
+            </div>
+            <div class="match-time">🕒 TBC · BMO Field</div>
+          </div>
+          <div class="match-card">
+            <div class="match-phase">Group Stage · Match 3</div>
+            <div class="match-date">Jun 19, 2026</div>
+            <div class="match-teams">
+              <span class="team">Group C</span>
+              <span class="vs">vs</span>
+              <span class="team">Group C</span>
+            </div>
+            <div class="match-time">🕒 TBC · BMO Field</div>
+          </div>
+          <div class="match-card">
+            <div class="match-phase">Group Stage · Match 4</div>
+            <div class="match-date">Jun 22, 2026</div>
+            <div class="match-teams">
+              <span class="team">Group D</span>
+              <span class="vs">vs</span>
+              <span class="team">Group D</span>
+            </div>
+            <div class="match-time">🕒 TBC · BMO Field</div>
+          </div>
+          <div class="match-card">
+            <div class="match-phase">Group Stage · Match 5</div>
+            <div class="match-date">Jun 25, 2026</div>
+            <div class="match-teams">
+              <span class="team">Group E</span>
+              <span class="vs">vs</span>
+              <span class="team">Group E</span>
+            </div>
+            <div class="match-time">🕒 TBC · BMO Field</div>
+          </div>
+          <div class="match-card match-card-knockout">
+            <div class="match-phase">Round of 32 · Knockout</div>
+            <div class="match-date">Jul 2, 2026</div>
+            <div class="match-teams">
+              <span class="team">TBD</span>
+              <span class="vs">vs</span>
+              <span class="team">TBD</span>
+            </div>
+            <div class="match-time">🕒 TBC · BMO Field</div>
+          </div>
+        </div>
+        <p class="schedule-note">Dates and opponents are approximate. Always verify at <a href="https://www.fifa.com" target="_blank" rel="noopener" class="link">fifa.com</a>.</p>
+      </div>
+    </section>
+
+    <!-- NEIGHBOURHOODS -->
+    <section class="section" id="neighborhoods">
+      <div class="container">
+        <div class="section-label">The City</div>
+        <h2 class="section-title">Toronto's Neighbourhoods</h2>
+        <p class="section-desc">Each district has its own personality. Here's where to spend your time between matches.</p>
+        <div class="neighborhood-grid">
+          <div class="neighborhood-card" style="--accent:#f59e0b">
+            <div class="neighborhood-icon">🏙️</div>
+            <h3>Downtown Core</h3>
+            <p>The beating heart — CN Tower, Rogers Centre, Union Station, and the waterfront all within walking distance of each other.</p>
+            <div class="neighborhood-tags"><span>Central</span><span>Walkable</span></div>
+          </div>
+          <div class="neighborhood-card" style="--accent:#a78bfa">
+            <div class="neighborhood-icon">🏚️</div>
+            <h3>Distillery District</h3>
+            <p>Car-free Victorian industrial heritage site. Craft breweries, galleries, cobblestone lanes, and excellent food.</p>
+            <div class="neighborhood-tags"><span>Historic</span><span>Arts</span></div>
+          </div>
+          <div class="neighborhood-card" style="--accent:#34d399">
+            <div class="neighborhood-icon">🌏</div>
+            <h3>Kensington & Chinatown</h3>
+            <p>Bohemian, multicultural, and delicious. Global street food, vintage shops, and a buzzing community vibe.</p>
+            <div class="neighborhood-tags"><span>Food</span><span>Culture</span></div>
+          </div>
+          <div class="neighborhood-card" style="--accent:#f43f5e">
+            <div class="neighborhood-icon">🎸</div>
+            <h3>Queen Street West</h3>
+            <p>Indie boutiques, music venues, craft cocktail bars, and some of the best brunch spots in the city.</p>
+            <div class="neighborhood-tags"><span>Nightlife</span><span>Shopping</span></div>
+          </div>
+          <div class="neighborhood-card" style="--accent:#38bdf8">
+            <div class="neighborhood-icon">💎</div>
+            <h3>Yorkville</h3>
+            <p>Upscale dining, designer boutiques, and world-class hotels. Toronto's answer to Fifth Avenue.</p>
+            <div class="neighborhood-tags"><span>Luxury</span><span>Fine Dining</span></div>
+          </div>
+          <div class="neighborhood-card" style="--accent:#fb923c">
+            <div class="neighborhood-icon">🌊</div>
+            <h3>Waterfront & Harbourfront</h3>
+            <p>Lake Ontario shoreline with outdoor events, ferry access to the islands, and sweeping skyline views.</p>
+            <div class="neighborhood-tags"><span>Outdoors</span><span>Views</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DINING -->
+    <section class="section section-alt" id="dining">
+      <div class="container">
+        <div class="section-label">Eat & Drink</div>
+        <h2 class="section-title">Top Dining Spots</h2>
+        <p class="section-desc">Toronto is one of the most culinarily diverse cities on earth. Here's where to eat.</p>
+        <div class="dining-grid">
+          <div class="dining-card">
+            <div class="dining-card-header">
+              <div class="dining-icon">🥩</div>
+              <div class="dining-meta"><span class="dining-price">$$</span><span class="dining-area">Old Town</span></div>
+            </div>
+            <h3>St. Lawrence Market</h3>
+            <p>A Toronto institution since 1803. Two floors of vendors selling the legendary peameal bacon sandwich, artisan cheeses, and fresh produce.</p>
+            <div class="dining-tag">Must-try: Peameal Bacon Sandwich</div>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-header">
+              <div class="dining-icon">🍜</div>
+              <div class="dining-meta"><span class="dining-price">$</span><span class="dining-area">Chinatown</span></div>
+            </div>
+            <h3>Chinatown & Spadina</h3>
+            <p>Dozens of authentic restaurants packed into a few blocks. Dim sum, Vietnamese pho, Sichuan hot pot, and bubble tea at unbeatable prices.</p>
+            <div class="dining-tag">Must-try: Dim Sum Brunch</div>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-header">
+              <div class="dining-icon">🍕</div>
+              <div class="dining-meta"><span class="dining-price">$$</span><span class="dining-area">Little Italy</span></div>
+            </div>
+            <h3>College Street Strip</h3>
+            <p>A long stretch of Italian trattorias, cozy wine bars, and neighbourhood spots beloved by locals. Perfect for pre-match pasta.</p>
+            <div class="dining-tag">Must-try: Wood-fired Pizza</div>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-header">
+              <div class="dining-icon">🍷</div>
+              <div class="dining-meta"><span class="dining-price">$$$$</span><span class="dining-area">Yorkville</span></div>
+            </div>
+            <h3>Yorkville Fine Dining</h3>
+            <p>World-class Canadian cuisine at Alo, Scaramouche, and Canoe. Reserve months in advance — these book up fast during the tournament.</p>
+            <div class="dining-tag">Must-try: Canadian tasting menu</div>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-header">
+              <div class="dining-icon">🌮</div>
+              <div class="dining-meta"><span class="dining-price">$</span><span class="dining-area">Kensington</span></div>
+            </div>
+            <h3>Kensington Market</h3>
+            <p>A bohemian food paradise. Roti, jerk chicken, empanadas, fresh juice, and international street food all within one colourful market.</p>
+            <div class="dining-tag">Must-try: Jerk Chicken Roti</div>
+          </div>
+          <div class="dining-card">
+            <div class="dining-card-header">
+              <div class="dining-icon">🍺</div>
+              <div class="dining-meta"><span class="dining-price">$$</span><span class="dining-area">Distillery</span></div>
+            </div>
+            <h3>Distillery Brewpubs</h3>
+            <p>Craft beer at its finest. Mill Street Brewery and others serve excellent ales and lagers in a stunning Victorian heritage setting.</p>
+            <div class="dining-tag">Must-try: Mill Street Organic Lager</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENTERTAINMENT -->
+    <section class="section" id="entertainment">
+      <div class="container">
+        <div class="section-label">Nightlife & Events</div>
+        <h2 class="section-title">Entertainment & Nightlife</h2>
+        <div class="entertainment-grid">
+          <div class="ent-card ent-card-large">
+            <div class="ent-card-icon">🎵</div>
+            <div class="ent-card-body">
+              <h3>Entertainment District</h3>
+              <p>King Street West is the undisputed nightlife hub. Live jazz at Jazz Bistro, rooftop bars, club nights at CODA and Rebel, and late-night eats all within a few electric blocks. The action runs until 3am on weekends.</p>
+              <div class="ent-tags"><span>Clubs</span><span>Live Music</span><span>Bars</span><span>Late Night</span></div>
+            </div>
+          </div>
+          <div class="ent-card">
+            <div class="ent-card-icon">🎭</div>
+            <h3>Live Theatre</h3>
+            <p>World-class Broadway touring productions at Princess of Wales and Royal Alexandra theatres — book ahead.</p>
+            <div class="ent-tags"><span>Theatre</span><span>Culture</span></div>
+          </div>
+          <div class="ent-card">
+            <div class="ent-card-icon">🎸</div>
+            <h3>Horseshoe Tavern</h3>
+            <p>Legendary 1947 live music venue that launched Neil Young and The Band. Outstanding nightly lineup.</p>
+            <div class="ent-tags"><span>Live Music</span><span>Iconic</span></div>
+          </div>
+          <div class="ent-card">
+            <div class="ent-card-icon">🌅</div>
+            <h3>Rooftop Bars</h3>
+            <p>Lavelle, Hotel X Rooftop, and Marben offer sweeping city skyline views with cocktails in hand.</p>
+            <div class="ent-tags"><span>Views</span><span>Cocktails</span></div>
+          </div>
+          <div class="ent-card">
+            <div class="ent-card-icon">⚽</div>
+            <h3>FIFA Fan Festival</h3>
+            <p>Official FIFA Fan Festivals at Nathan Phillips Square — free entry, big screens, live acts, and food vendors.</p>
+            <div class="ent-tags"><span>Free</span><span>Family-friendly</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGHTSEEING -->
+    <section class="section section-alt" id="sightseeing">
+      <div class="container">
+        <div class="section-label">Attractions</div>
+        <h2 class="section-title">Must-See Toronto</h2>
+        <div class="attraction-list">
+          <div class="attraction-item">
+            <div class="attraction-num">01</div>
+            <div class="attraction-content">
+              <div class="attraction-header">
+                <h3>CN Tower</h3>
+                <div class="attraction-meta"><span>~$45 CAD</span><span>Downtown</span></div>
+              </div>
+              <p>Toronto's iconic 553m landmark. Glass-floor observation deck, 360-degree restaurant, and the EdgeWalk — the world's highest hands-free walk. Views stretch to Niagara Falls on clear days.</p>
+            </div>
+          </div>
+          <div class="attraction-item">
+            <div class="attraction-num">02</div>
+            <div class="attraction-content">
+              <div class="attraction-header">
+                <h3>Toronto Islands</h3>
+                <div class="attraction-meta"><span>~$9 ferry</span><span>Harbourfront</span></div>
+              </div>
+              <p>A 15-minute ferry from downtown drops you on a car-free island with beaches, bike paths, and the best skyline view in the city. Take the sunset ferry back.</p>
+            </div>
+          </div>
+          <div class="attraction-item">
+            <div class="attraction-num">03</div>
+            <div class="attraction-content">
+              <div class="attraction-header">
+                <h3>Royal Ontario Museum</h3>
+                <div class="attraction-meta"><span>~$25 CAD</span><span>Bloor/Yorkville</span></div>
+              </div>
+              <p>Canada's largest museum — 13 million objects spanning dinosaur fossils, Egyptian mummies, Indigenous art, and natural history across 40 galleries.</p>
+            </div>
+          </div>
+          <div class="attraction-item">
+            <div class="attraction-num">04</div>
+            <div class="attraction-content">
+              <div class="attraction-header">
+                <h3>Ripley's Aquarium</h3>
+                <div class="attraction-meta"><span>~$40 CAD</span><span>Downtown</span></div>
+              </div>
+              <p>20,000+ sea creatures including sharks and rays beneath a 97-metre underwater tunnel. Next door to the CN Tower — combine both in one afternoon.</p>
+            </div>
+          </div>
+          <div class="attraction-item">
+            <div class="attraction-num">05</div>
+            <div class="attraction-content">
+              <div class="attraction-header">
+                <h3>Niagara Falls Day Trip</h3>
+                <div class="attraction-meta"><span>~1.5hr drive</span><span>Day Trip</span></div>
+              </div>
+              <p>One of the world's natural wonders is 90 minutes away. The Maid of the Mist boat tour and Journey Behind the Falls are unmissable. Book in advance during the tournament.</p>
+            </div>
+          </div>
+          <div class="attraction-item">
+            <div class="attraction-num">06</div>
+            <div class="attraction-content">
+              <div class="attraction-header">
+                <h3>Art Gallery of Ontario</h3>
+                <div class="attraction-meta"><span>~$25 CAD</span><span>Downtown West</span></div>
+              </div>
+              <p>Frank Gehry-designed gallery with 100,000+ works from Rembrandt to Picasso to Canada's Group of Seven. Stunning architecture inside and out.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPORT -->
+    <section class="section" id="transport">
+      <div class="container">
+        <div class="section-label">Getting Around</div>
+        <h2 class="section-title">Transport Guide</h2>
+        <div class="transport-grid">
+          <div class="transport-card">
+            <div class="transport-icon">🚇</div>
+            <h3>TTC Subway & Streetcar</h3>
+            <p>Toronto's public transit covers the city well. A day pass (~$14 CAD) gives unlimited travel. Tap your credit card at turnstiles — no paper ticket needed.</p>
+            <a href="https://www.ttc.ca" target="_blank" rel="noopener" class="transport-link">ttc.ca →</a>
+          </div>
+          <div class="transport-card">
+            <div class="transport-icon">🚂</div>
+            <h3>GO Train & UP Express</h3>
+            <p>GO Transit connects suburbs and the GTA. UP Express links Pearson Airport to Union Station in 25 minutes for ~$12.35 CAD — the best airport option.</p>
+            <a href="https://www.gotransit.com" target="_blank" rel="noopener" class="transport-link">gotransit.com →</a>
+          </div>
+          <div class="transport-card">
+            <div class="transport-icon">🚲</div>
+            <h3>Bike Share Toronto</h3>
+            <p>850+ stations across the city. A $15 CAD day pass gives unlimited 60-minute rides. Perfect for the waterfront trail and short neighbourhood hops.</p>
+            <a href="https://bikesharetoronto.com" target="_blank" rel="noopener" class="transport-link">bikesharetoronto.com →</a>
+          </div>
+          <div class="transport-card">
+            <div class="transport-icon">🚗</div>
+            <h3>Rideshare & Taxi</h3>
+            <p>Uber and Lyft both operate in Toronto. Expect surge pricing on match days — allow extra time and budget. Metered taxis are always available.</p>
+            <div class="transport-note">⚠️ Do not drive to BMO Field on match days — parking is near-impossible.</div>
+          </div>
+          <div class="transport-card">
+            <div class="transport-icon">🛥️</div>
+            <h3>Toronto Island Ferry</h3>
+            <p>Ferries depart from Jack Layton Ferry Terminal near Union Station. Ward's Island, Hanlan's Point, and Centre Island served. A must-do experience.</p>
+          </div>
+          <div class="transport-card">
+            <div class="transport-icon">🚶</div>
+            <h3>Walking & PATH</h3>
+            <p>Downtown Toronto is surprisingly walkable. The PATH underground network (30km of tunnels!) connects major buildings without stepping outside.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIPS -->
+    <section class="section section-alt" id="tips">
+      <div class="container">
+        <div class="section-label">Practical Info</div>
+        <h2 class="section-title">Visitor Tips</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">💵</div>
+            <h3>Currency</h3>
+            <p>Canadian Dollar (CAD). Tap-to-pay is universal. Exchange at banks; avoid hotel kiosks and airport booths (poor rates).</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🍽️</div>
+            <h3>Tipping</h3>
+            <p>15–20% at restaurants is standard. Card machines suggest 18–25% — you can always enter a custom amount. No tip expected at fast food or counter service.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">☀️</div>
+            <h3>Weather</h3>
+            <p>June–July: warm (20–30°C / 68–86°F). Bring sunscreen, light layers for evenings, and rain gear — summer showers are common and brief.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🍺</div>
+            <h3>Drinking Age</h3>
+            <p>19 years old in Ontario. ID required everywhere. Always carry your passport — some venues won't accept other ID from non-residents.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">📱</div>
+            <h3>Connectivity</h3>
+            <p>Free Wi-Fi at Union Station and most cafes. Prepaid SIMs from Rogers, Bell, or Freedom Mobile cost ~$30 CAD for a month of data.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🏥</div>
+            <h3>Health & Safety</h3>
+            <p>Emergency: 911. Toronto is consistently ranked among the world's safest major cities. Travel insurance is strongly recommended — non-resident healthcare is expensive.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🛂</div>
+            <h3>Entry Requirements</h3>
+            <p>Many nationalities need a Canadian eTA ($7 CAD). Apply online before travel and allow at least 72 hours for processing.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-icon">🗣️</div>
+            <h3>Language</h3>
+            <p>English is primary. Toronto has 200+ languages spoken — you'll almost certainly find someone who speaks yours. French labelling is common on products.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Common Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I get from Pearson Airport to downtown?
+              <span class="faq-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <p>The <strong>UP Express</strong> is the fastest and most affordable option — 25 minutes, ~$12.35 CAD from Pearson T1/T3 directly to Union Station. Runs every 15 minutes. Taxis cost ~$60–70 CAD; rideshare ~$40–50 CAD.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Is Toronto safe for tourists?
+              <span class="faq-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <p>Yes — Toronto is consistently ranked among the safest major cities in the world. As with any large city, stay aware of your surroundings, keep valuables close in crowded areas, and stick to well-lit streets late at night.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What should I not miss with only 2 days in the city?
+              <span class="faq-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <p><strong>Day 1:</strong> CN Tower → Ripley's Aquarium → St. Lawrence Market lunch → Distillery District afternoon → King Street West dinner and nightlife.<br><br><strong>Day 2:</strong> Toronto Islands morning → Royal Ontario Museum or AGO → Kensington Market lunch → Queen Street West → rooftop cocktails at sunset.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Will there be a FIFA Fan Festival in Toronto?
+              <span class="faq-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <p>Yes — FIFA Fan Festivals are planned for all host cities including Toronto. Nathan Phillips Square (in front of City Hall) is the expected location. Entry is typically free with big screens, live acts, and food. Watch <a href="https://www.fifa.com" target="_blank" rel="noopener" class="link">FIFA.com</a> for confirmed details.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I use my credit card everywhere?
+              <span class="faq-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <p>Almost universally yes. Contactless tap payments are standard everywhere. Carry ~$40–50 CAD cash for markets and small street vendors. Visa and Mastercard are accepted everywhere; American Express less so.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">⚽ Toronto <strong>2026</strong></div>
+          <p>An independent visitor's guide to the FIFA World Cup 2026 in Toronto. Not affiliated with FIFA or the City of Toronto.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Official Resources</h4>
+          <ul>
+            <li><a href="https://www.fifa.com" target="_blank" rel="noopener">FIFA.com</a></li>
+            <li><a href="https://www.toronto.ca" target="_blank" rel="noopener">City of Toronto</a></li>
+            <li><a href="https://www.destinationtoronto.com" target="_blank" rel="noopener">Destination Toronto</a></li>
+            <li><a href="https://www.ttc.ca" target="_blank" rel="noopener">TTC Transit</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Nav</h4>
+          <ul>
+            <li><a href="#venue">Venue</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#dining">Dining</a></li>
+            <li><a href="#transport">Getting Around</a></li>
+            <li><a href="#tips">Visitor Tips</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>Questions or suggestions?</p>
+          <a href="mailto:contact@toronto2026.guide" class="footer-email">contact@toronto2026.guide</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Toronto 2026 Visitor Guide · Independent fan guide, not affiliated with FIFA</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script>
+    const scrollProgress = document.getElementById('scrollProgress');
+    const header = document.getElementById('siteHeader');
+    const backToTop = document.getElementById('backToTop');
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('mainNav');
+
+    window.addEventListener('scroll', () => {
+      const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      scrollProgress.style.width = pct + '%';
+      header.classList.toggle('scrolled', window.scrollY > 60);
+      backToTop.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mainNav.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+      });
+    });
+
+    const navLinks = document.querySelectorAll('.main-nav a');
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '-80px 0px 0px 0px' });
+    document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.dining-card, .transport-card, .tip-card, .neighborhood-card, .match-card, .ent-card, .attraction-item, .venue-detail').forEach(el => {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  </script>
 </body>
 </html>
