@@ -627,3 +627,85 @@ strong { font-weight: 600; }
 @media (max-width: 768px) {
   .ride-widget { flex-direction: column; gap: 1.1rem; align-items: flex-start; padding: 1.25rem; }
 }
+
+/* ===== Countdown ===== */
+.hero-countdown {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 1rem;
+}
+.cd-item { display: flex; flex-direction: column; align-items: center; min-width: 52px; }
+.cd-num  { font-size: 2.2rem; font-weight: 800; color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+.cd-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gray); margin-top: 0.25rem; }
+.cd-sep  { font-size: 1.8rem; font-weight: 700; color: var(--gold); opacity: 0.5; line-height: 1; padding-bottom: 0.5rem; }
+.cd-caption { font-size: 0.78rem; color: var(--gray); margin-bottom: 2rem; }
+.cd-live { font-size: 1.3rem; font-weight: 700; color: var(--gold); }
+
+@media (max-width: 480px) {
+  .hero-countdown { padding: 0.75rem 1rem; gap: 0.15rem; }
+  .cd-item { min-width: 40px; }
+  .cd-num  { font-size: 1.6rem; }
+  .cd-sep  { font-size: 1.4rem; }
+}
+
+/* ===== Hotel Grid ===== */
+.hotel-grid {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.hotel-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem 1.5rem;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem;
+  transition: transform 0.2s, border-color 0.2s;
+  color: var(--white);
+}
+.hotel-card:hover { transform: translateY(-4px); border-color: var(--border-g); color: var(--white); }
+.hotel-card-logo { font-size: 2.2rem; }
+.hotel-card-name { font-size: 1.05rem; font-weight: 700; color: var(--white); }
+.hotel-card-desc { font-size: 0.82rem; color: var(--gray-lt); line-height: 1.55; flex: 1; }
+.hotel-card-cta  { font-size: 0.82rem; font-weight: 700; color: var(--gold); margin-top: 0.3rem; }
+.hotel-note {
+  font-size: 0.82rem; color: var(--gray);
+  background: rgba(245,166,35,0.05); border: 1px solid rgba(245,166,35,0.12);
+  padding: 0.9rem 1.1rem; border-radius: var(--radius); line-height: 1.65;
+}
+
+@media (max-width: 1024px) { .hotel-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 480px)  { .hotel-grid { grid-template-columns: 1fr; } }
+
+/* ===== Match Calendar Button ===== */
+.match-cal-btn {
+  display: flex; align-items: center; justify-content: center; gap: 0.35rem;
+  margin-top: 0.85rem; padding: 0.48rem 0.9rem;
+  background: rgba(240,180,41,0.08); border: 1px solid rgba(240,180,41,0.22);
+  color: var(--gold); border-radius: 7px; width: 100%;
+  font-size: 0.76rem; font-weight: 700; cursor: pointer;
+  transition: background 0.2s, color 0.2s; font-family: inherit;
+}
+.match-cal-btn:hover { background: rgba(240,180,41,0.18); color: var(--gold-lt); }
+
+/* ===== Attraction Directions Button ===== */
+.attraction-dir-btn {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  margin-top: 0.75rem; padding: 0.42rem 0.85rem;
+  background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.2);
+  color: #38bdf8; border-radius: 7px;
+  font-size: 0.78rem; font-weight: 700;
+  transition: background 0.2s; white-space: nowrap;
+}
+.attraction-dir-btn:hover { background: rgba(56,189,248,0.15); color: #7dd3fc; }
+
+/* ===== Dining Reserve Button ===== */
+.dining-reserve-btn {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  margin-top: 0.75rem; padding: 0.42rem 0.85rem;
+  background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2);
+  color: #f87171; border-radius: 7px;
+  font-size: 0.76rem; font-weight: 700;
+  transition: background 0.2s; white-space: nowrap;
+}
+.dining-reserve-btn:hover { background: rgba(248,113,113,0.16); color: #fca5a5; }
+
+/* ===== Fan Maps Button ===== */
+.fan-maps { background: #1a73e8; color: #fff; }
